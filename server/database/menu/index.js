@@ -21,7 +21,11 @@ const MenuSchema = new  mongoose.Schema(
                 unique:true, // same food shouldnt be recommended again nd again should be unique  
             },
         ],
+    },
+    {
+        timestamps:true,
     }
+
 );
 
 export const MenuModel=  mongoose.model("Menu",MenuSchema);

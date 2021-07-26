@@ -7,6 +7,9 @@ const ImageSchema = new mongoose.Schema(
                 location:{type:String,required:true},
             },
         ],
+    },
+    {
+        timestamps:true,
     }
 );
 
