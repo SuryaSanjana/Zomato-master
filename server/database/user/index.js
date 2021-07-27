@@ -15,6 +15,7 @@ const UserSchema = new mongoose.Schema(
     }
     );
 
+
     UserSchema.methods.generateJwtToken = function () {
       return jwt.sign({user : this._id.toString() },  "ZomatoApp");
     };
@@ -28,6 +29,18 @@ UserSchema.statics.findByEmailAndPhone = async ({email,phoneNumber})=>{
      }
      return false;  //false coz user doesnt exist
     };
+
+//for sign in 
+UserSchema.statics.findByEmailAndPassword = async ({email,password}) =>{
+    //check whether email exist
+    const user = await UserModel.findOne({email});
+    if(!user) throw new Error("User does not exist");
+
+    //compare email and password
+    const doesPasswordMatch = await bcrypt.compare(password,user.password);
+    if(!doesPasswordMatch) throw new Error("Invalid Password");
+    return user;
+};
 
     UserSchema.pre("save",function (next) {
       const user = this; //user data is reffered as `this` .it is assigned to a const just for simplicity
