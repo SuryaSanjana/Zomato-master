@@ -2,6 +2,7 @@
 import express from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import passport from "passport";
 
 //Models
 import { UserModel } from "../../database/user";
@@ -28,7 +29,7 @@ Router.post("/signup",async(req,res)=>{
     // if(checkUserByEmail || checkUserByPhone){
     //     return res.json({error:"User already exist"});
     // }
-    await UserModel.findByEmailAndPhone( req.body.credentials);
+    await UserModel.findByEmailAndPhone(req.body.credentials);
 
     // //hash the password  encrryption of password
     // const bcryptSalt = await brcrypt.genSalt(8);
@@ -76,5 +77,40 @@ Router.post("/signin",async(req,res)=>{
   }
 });
 
+
+
+/*
+route              /google
+description       google signin
+Params            none
+Access           public
+Method           get
+*/
+
+Router.get("/google",passport.authenticate("google",
+  {
+    scope:[
+      "https://www.googleapis.com/auth/userinfo.profile",
+      "https://www.googleapis.com/auth/userinfo.email",
+    ],
+  })
+);
+
+
+
+/*
+route              /google/callback
+description       google signin callback
+Params            none
+Access           public
+Method           get
+*/
+Router.get(
+  "/google/callback",
+  passport.authenticate("google", { failureRedirect: "/" }),
+  (req, res) => {
+    return res.json({ token: req.session.passport.user.token });
+  }
+);
 
 export default Router;
