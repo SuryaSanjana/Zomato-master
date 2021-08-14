@@ -5,7 +5,7 @@ import passport from "passport";
 //import multer from "multer";
 
 //Database Model
-import { ImageModel } from "../../database/image";
+import { ImageModel } from "../../database/allNodels";
 
 const Router = express.Router();
 

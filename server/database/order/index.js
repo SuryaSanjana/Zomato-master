@@ -19,14 +19,14 @@ const OrderSchema = new mongoose.Schema(
                 },
             },
         ],
-        orderRatings:{
-            type:Number,
-            required:true,
-        },
+        // orderRatings:{
+        //     type:Number,
+        //     required:true,
+        // },
     },
     {
         timestamps:true,
     }
 );
 
-export const OrderMOdel = mongoose.model("Orders", OrderSchema );
+export const OrderModel = mongoose.model("Orders", OrderSchema );
