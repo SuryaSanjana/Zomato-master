@@ -5,6 +5,8 @@ import passport from "passport";
 //database model
 import { OrderModel } from "../../database/allModels";
 
+//validation
+import { ValidateUserId } from "../../validation/orders";
 const Router = express.Router();
 
 
@@ -17,6 +19,10 @@ Method    GET
 */
 Router.get("/:_id",  passport.authenticate("jwt", { session: false }), async (req, res) => {
     try {
+      //validation
+      await ValidateUserId(req.params);
+
+      
       const { _id } = req.params;
   
       const getOrders = await OrderModel.findOne({ user: _id });
