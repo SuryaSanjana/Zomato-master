@@ -7,6 +7,8 @@ import passport from "passport";
 //Models
 import { UserModel } from "../../database/user";
 
+//validation
+import { ValidateSignup,ValidateSignin } from "../../validation/auth";
 
 const Router = express.Router();
 
@@ -19,6 +21,11 @@ Method  post
 */
 Router.post("/signup",async(req,res)=>{
   try{
+    //validation
+    await ValidateSignup(req.body.credentials);
+
+
+
    // const {email,password,fullname,phoneNumber} = req.body.credentials;
 
     // //check whether email exist
@@ -67,7 +74,11 @@ Method           post
 */
 Router.post("/signin",async(req,res)=>{
   try{
-   const user = await UserModel.findByEmailAndPassword(req.body.credentials);
+    //validation
+    await ValidateSignin(req.body.credentials);
+
+
+    const user = await UserModel.findByEmailAndPassword(req.body.credentials);
    const token = user.generateJwtToken();
   
     //return
