@@ -5,6 +5,11 @@ import passport from "passport";
 //database Model
 import {RestaurantModel} from "../../database/allModels";
 
+//validation
+import { ValidateRestaurantCity, ValidateRestaurantSearchString } from "../../validation/restaurant";
+
+import { ValidateRestaurantId } from "../../validation/food";
+
 const Router = express.Router();
 
 /*
@@ -17,6 +22,10 @@ Method           get
 
 Router.get("/",async (req,res)=>{
   try{
+    //validation
+    await ValidateRestaurantCity(req.query);
+
+
     const {city} =req.query;
     const restaurants=await RestaurantModel.find({city }); //find method used but not findOne coz we need all restaurants
     return res.json({restaurants});
@@ -36,6 +45,10 @@ Method           get
 */
 Router.get("/:_id", async (req,res)=>{
   try{
+    //validation
+    await ValidateRestaurantId(req.params);
+
+
     const {_id} = req.params;
     const restaurant = await RestaurantModel.findOne(_id);
     if(!restaurant){
@@ -60,6 +73,11 @@ Method           get
 
 Router.get("/search",async (req,res)=>{
  try{
+   //validation
+   
+   await ValidateRestaurantSearchString(req.body);
+
+
   const {searchString} = req.body;
   const restaurants = await RestaurantModel.find(
     {
