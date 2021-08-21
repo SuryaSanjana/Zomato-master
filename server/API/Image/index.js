@@ -42,7 +42,7 @@ Router.post("/",upload.single("file"), async(req,res)=>{
      //s3 bucket options
      const bucketOptions = {
         Bucket:"shapeaizomatoprojectbucket",
-        key:file.originalname,  //unique key 
+        Key:file.originalname,  //unique key 
         Body:file.buffer,   //storage in RAM is assigned for this object
         ContentType :file.mimetype, 
         ACL:"public-read",   //ACL- ACcess Control List
