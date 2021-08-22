@@ -5,7 +5,6 @@ import { IoFastFoodOutline, IoNutritionOutline } from "react-icons/io5";
 import { BiDrink } from "react-icons/bi";
 import classnames from "classnames";
 
-
 const MobileTabs = () => {
   const [allTypes, setAllTypes] = useState([
     {
@@ -30,17 +29,6 @@ const MobileTabs = () => {
     },
   ]);
   const { type } = useParams();
-  // useEffect(()=>{
-  //   if(type){
-  //     const updateTypes = allTypes.map((item)=>{
-  //       if(item.id===type){
-  //         return { ...item,isActive:true};
-  //       }
-  //       return item;
-  //     });
-  //     setAllTypes(updateTypes);
-  //   }
-  // },[type]);
 
   return (
     <>
@@ -69,7 +57,6 @@ const MobileTabs = () => {
     </>
   );
 };
-
 
 const LargeTabs = () => {
   const [allTypes, setAllTypes] = useState([
@@ -117,7 +104,7 @@ const LargeTabs = () => {
   const { type } = useParams();
   return (
     <>
-      <div className="hidden lg:flex gap-14 container px-20 mx-auto">
+      <div className="hidden lg:flex gap-14 container px-20 my-8 mx-auto">
         {allTypes.map((items) => (
           <Link to={`/${items.id}`}>
             <div
