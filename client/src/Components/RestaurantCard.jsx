@@ -25,7 +25,7 @@ const RestaurantCard = (props) => {
             </span>
           </div>
           <img
-            src={props.photos.length && props.photos[0]}
+            src={props.photos.length && props.photos[0]} //restauraant API->photos
             alt="food"
             className="w-full h-full rounded-2xl"
           />
@@ -34,7 +34,7 @@ const RestaurantCard = (props) => {
           <div className="flex items-center justify-between">
             <h4 className="text-xl font-medium">{props.name}</h4>
             <span className="bg-green-800 text-white text-sm p-1 rounded flex items-center">
-              {props.restaurantReviewValue} <AiTwotoneStar />
+              {props.restaurantReviewValue} <AiTwotoneStar />  {/* processing wil be done using redux*/}
             </span>
           </div>
           <div className="flex items-center justify-between text-gray-500">
