@@ -158,6 +158,7 @@ const Overview = () => {
               <ReviewCard {...reviewData} />
             ))}
           </div>
+          {/* for mobile devices */}
           <div className="my-4 w-full  md:hidden flex flex-col gap-4">
             <Mapview
               title={reduxState?.name}
