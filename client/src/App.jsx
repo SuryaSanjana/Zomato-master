@@ -10,7 +10,7 @@ import React, { useEffect } from "react";
 
 // pages
 import Home from "./Page/Home";
-// import Overview from "./Page/Restaurant/Overview";
+ import Overview from "./Page/Restaurant/Overview";
 // import OrderOnline from "./Page/Restaurant/OrderOnline";
 // import Reviews from "./Page/Restaurant/Reviews";
 // import Menu from "./Page/Restaurant/Menu";
