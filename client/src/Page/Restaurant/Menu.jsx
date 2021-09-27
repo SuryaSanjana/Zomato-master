@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import MenuCollection from "../../Components/restaurant/MenuCollection";
 
 // redux actions
-import { getImage } from "../../Redux/Reducer/Image/Image.action";
+//import { getImage } from "../../Redux/Reducer/Image/Image.action";
 
 const Menu = () => {
   const [menus, setMenus] = useState([]);

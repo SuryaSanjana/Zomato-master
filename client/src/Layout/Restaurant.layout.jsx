@@ -39,7 +39,7 @@ const RestaurantLayout = (props) => {
       );
     });
 
-    dispatch(getCart());
+    // dispatch(getCart());
   }, []);
 
   return (

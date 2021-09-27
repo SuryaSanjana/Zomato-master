@@ -3,7 +3,7 @@ import { Fragment, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { useDispatch } from "react-redux";
 
-import { signUp } from "../../Redux/Reducer/Auth/Auth.action";
+//import { signUp } from "../../Redux/Reducer/Auth/Auth.action";
 export default function SignUp({ isOpen, setIsOpen }) {
   const [userData, setUserData] = useState({
     email: "",

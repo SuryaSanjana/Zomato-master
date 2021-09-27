@@ -6,7 +6,7 @@ import ImageViewer from "react-simple-image-viewer";
 // components
 import PhotoCollection from "../../Components/restaurant/PhotosCollection";
 // redux actions
-import { getImage } from "../../Redux/Reducer/Image/Image.action";
+//import { getImage } from "../../Redux/Reducer/Image/Image.action";
 
 const Photos = () => {
   const [photos, setPhotos] = useState([]);

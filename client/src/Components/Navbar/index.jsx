@@ -4,14 +4,14 @@ import { HiLocationMarker } from "react-icons/hi";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 import { RiSearch2Line } from "react-icons/ri";
 import { useSelector, useDispatch } from "react-redux";
-import gravatar from "gravatar";
+//import gravatar from "gravatar";
 
 // components
 import SignIn from "../Auth/SignIn";
 import SignUp from "../Auth/SignUp";
 
 // redux actions
-import { signOut } from "../../Redux/Reducer/Auth/Auth.action";
+i//import { signOut } from "../../Redux/Reducer/Auth/Auth.action";
 
 const MobileNav = ({ SignIn, SignUp }) => {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);

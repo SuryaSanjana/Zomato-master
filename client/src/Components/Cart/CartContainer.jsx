@@ -8,7 +8,7 @@ import { useHistory } from "react-router";
 import FoodItem from "./FoodItem";
 
 // redux action
-import { getCart } from "../../Redux/Reducer/Cart/Cart.action";
+//import { getCart } from "../../Redux/Reducer/Cart/Cart.action";
 
 const CartSM = ({ toggle }) => {
   const reduxState = useSelector((global) => global.cart.cart);
