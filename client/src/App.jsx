@@ -6,7 +6,7 @@ import React, { useEffect } from "react";
 // // HOC
  import HomeLayoutHOC from "./HOC/Home.Hoc";
  import RestaurantLayoutHOC from "./HOC/Restaurant.HOC";
-// import CheckoutLayoutHOC from "./HOC/Checkout.Hoc";
+ import CheckoutLayoutHOC from "./HOC/Checkout.Hoc";
 
 // pages
 import Home from "./Page/Home";
@@ -15,7 +15,7 @@ import OrderOnline from "./Page/Restaurant/OrderOnline";
 import Reviews from "./Page/Restaurant/Reviews";
 import Menu from "./Page/Restaurant/Menu";
 import Photos from "./Page/Restaurant/Photos";
-// import Checkout from "./Page/Checkout";
+ import Checkout from "./Page/Checkout";
 // import RedirectRestaurant from "./Page/Restaurant/Redirect";
 // import GoogleAuth from "./Page/GoogleAuth";
 

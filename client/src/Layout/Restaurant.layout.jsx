@@ -8,10 +8,10 @@ import { BiBookmarkPlus } from "react-icons/bi";
 // components
 import RestaurantNavbar from "../Components/Navbar/restaurantNavbar";
  import ImageGrid from "../Components/restaurant/ImageGrid";
-// import InfoButtons from "../Components/restaurant/InfoButtons";
-// import RestaurantInfo from "../Components/restaurant/RestaurantInfo";
+import InfoButtons from "../Components/restaurant/InfoButtons";
+ import RestaurantInfo from "../Components/restaurant/RestaurantInfo";
  import TabContainer from "../Components/restaurant/Tabs";
-// import CartContainer from "../Components/Cart/CartContainer";
+ import CartContainer from "../Components/Cart/CartContainer";
 
 // // Redux actions
 // import { getSpecificRestaurant } from "../Redux/Reducer/restaurant/restaurant.action";
@@ -25,22 +25,22 @@ const RestaurantLayout = (props) => {
     address: "",
   });
   const { id } = useParams();
-//   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-//   useEffect(() => {
-//     dispatch(getSpecificRestaurant(id)).then((data) => {
-//       setRestaurant((prev) => ({
-//         ...prev,
-//         ...data.payload.restaurant,
-//       }));
+  useEffect(() => {
+    dispatch(getSpecificRestaurant(id)).then((data) => {
+      setRestaurant((prev) => ({
+        ...prev,
+        ...data.payload.restaurant,
+      }));
 
-//       dispatch(getImage(data.payload.restaurant.photos)).then((data) =>
-//         setRestaurant((prev) => ({ ...prev, ...data.payload.image }))
-//       );
-//     });
+      dispatch(getImage(data.payload.restaurant.photos)).then((data) =>
+        setRestaurant((prev) => ({ ...prev, ...data.payload.image }))
+      );
+    });
 
-//     dispatch(getCart());
-//   }, []);
+    dispatch(getCart());
+  }, []);
 
   return (
     <>
