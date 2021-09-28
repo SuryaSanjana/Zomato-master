@@ -8,7 +8,7 @@ import FoodItem from "../Components/Cart/FoodItem";
 import AddressList from "../Components/Checkout/AddressList";
 
 // reduxa action
-import { createOrder } from "../Redux/Reducer/Order/order.action";
+//import { createOrder } from "../Redux/Reducer/Order/order.action";
 
 const Checkout = () => {
   const reduxStateCart = useSelector((global) => global.cart.cart);
