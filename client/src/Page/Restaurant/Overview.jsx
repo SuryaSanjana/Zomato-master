@@ -79,7 +79,7 @@ const Overview = () => {
   const ratingChanged = (newRating) => {
     console.log(newRating);
   };
-
+ // to convert string to array 
   const getLatLong = (mapAddress) => {
     return mapAddress?.split(",").map((item) => parseFloat(item));
   };
@@ -163,7 +163,7 @@ const Overview = () => {
             <Mapview
               title={reduxState?.name}
               phno={`+91${reduxState?.contactNumber}`}
-              mapLocation={getLatLong(reduxState?.mapLocation)}
+              mapLocation={getLatLong(reduxState?.mapLocation)} 
               address={reduxState?.address}
             />
           </div>
