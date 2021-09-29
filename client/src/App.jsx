@@ -17,7 +17,7 @@ import Menu from "./Page/Restaurant/Menu";
 import Photos from "./Page/Restaurant/Photos";
  import Checkout from "./Page/Checkout";
  import RedirectRestaurant from "./Page/Restaurant/Redirect";
-// import GoogleAuth from "./Page/GoogleAuth";
+ import GoogleAuth from "./Page/GoogleAuth";
 
 // redux action
 import { getMyself } from "./Redux/Reducer/User/user.action";
