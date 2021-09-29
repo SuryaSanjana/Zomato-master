@@ -4,7 +4,7 @@ import { HiLocationMarker } from "react-icons/hi";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 import { RiSearch2Line } from "react-icons/ri";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-//import gravatar from "gravatar";
+import gravatar from "gravatar";
 import { useSelector } from "react-redux";
 
 // components
