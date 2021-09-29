@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { TiStarFullOutline } from "react-icons/ti";
 import { useDispatch } from "react-redux";
-//import dayjs from "dayjs";
-//import { getUser } from "../../../Redux/Reducer/User/user.action";
+import dayjs from "dayjs";
+import { getUser } from "../../../Redux/Reducer/User/user.action";
 
 const ReviewCard = (props) => {
   const [user, setUser] = useState("");

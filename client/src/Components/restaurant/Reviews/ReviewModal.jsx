@@ -5,7 +5,7 @@ import { useParams } from "react-router";
 import { useDispatch } from "react-redux";
 
 // redux action
-//import { postReviews } from "../../../Redux/Reducer/Reviews/review.action";
+import { postReviews } from "../../../Redux/Reducer/Reviews/review.action";
 
 export default function ReviewModal({ isOpen, setIsOpen, ...props }) {
   const [reviewData, setReviewData] = useState({
@@ -56,7 +56,7 @@ export default function ReviewModal({ isOpen, setIsOpen, ...props }) {
       isFoodReview: false,
       rating: 0,
     });
-    closeModal();
+    closeModal();  // after submit modal closes
   };
   return (
     <>

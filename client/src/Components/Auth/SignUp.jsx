@@ -3,7 +3,7 @@ import { Fragment, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { useDispatch } from "react-redux";
 
-//import { signUp } from "../../Redux/Reducer/Auth/Auth.action";
+import { signUp } from "../../Redux/Reducer/Auth/Auth.action";
 export default function SignUp({ isOpen, setIsOpen }) {
   const [userData, setUserData] = useState({
     email: "",
@@ -26,7 +26,7 @@ export default function SignUp({ isOpen, setIsOpen }) {
       password: "",
       fullname: "",
     });
-    dispatch(signUp(userData));
+    dispatch(signUp(userData));// user data cleared on the screen after submitting
   };
   const googlesignin = () =>
     (window.location.href = "http://localhost:4000/auth/google");

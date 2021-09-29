@@ -4,8 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 // components
 import ReviewCard from "../../Components/restaurant/Reviews/reviewCard";
 import AddReviewCard from "../../Components/restaurant/Reviews/AddReviewCard";
-
-//import { getReviews } from "../../Redux/Reducer/Reviews/review.action";
+//redux
+import { getReviews } from "../../Redux/Reducer/Reviews/review.action";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);

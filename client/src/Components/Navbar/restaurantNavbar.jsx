@@ -11,8 +11,8 @@ import { useSelector } from "react-redux";
 import SignIn from "../Auth/SignIn";
 import SignUp from "../Auth/SignUp";
 const MobileNav = ({ SignIn, SignUp }) => {
-//   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
-//   const reduxState = useSelector((global) => global.user.user);
+  const [isDropDownOpen, setIsDropDownOpen] = useState(false);
+  const reduxState = useSelector((global) => global.user.user);
 
   return (
     <div className="flex w-full items-center justify-between lg:hidden">

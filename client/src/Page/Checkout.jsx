@@ -29,31 +29,31 @@ const Checkout = () => {
     },
   ];
 
-  // const payNow = () => {
-  //   let options = {
-  //     key: "rzp_test_RNvW44vJHiXg1b",
-  //     amount:
-  //       reduxStateCart.reduce((acc, curVal) => acc + curVal.totalPrice, 0) *
-  //       100,
-  //     currency: "INR",
-  //     name: "zomato Clone",
-  //     description: "Food Payment",
-  //     image:
-  //       "https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png",
+  const payNow = () => {
+    let options = {
+      key: "rzp_test_RNvW44vJHiXg1b",
+      amount:
+        reduxStateCart.reduce((acc, curVal) => acc + curVal.totalPrice, 0) *
+        100,
+      currency: "INR",
+      name: "zomato Clone",
+      description: "Food Payment",
+      image:
+        "https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png",
 
-  //     handler: () => {
-  //       alert("Payment Done");
-  //     },
-  //     prefill: {
-  //       name: reduxStateUser.fullname,
-  //       email: reduxStateUser.email,
-  //     },
-  //     theme: { color: "#e23744" },
-  //   };
+      handler: () => {
+        alert("Payment Done");
+      },
+      prefill: {
+        name: reduxStateUser.fullname,
+        email: reduxStateUser.email,
+      },
+      theme: { color: "#e23744" },
+    };
 
-  //   let razorPay = new window.Razorpay(options);
-  //   razorPay.open();
-  // };
+    let razorPay = new window.Razorpay(options);
+    razorPay.open();
+  };
 
   return (
     <div className="my-3 flex flex-col gap-3 items-center">
