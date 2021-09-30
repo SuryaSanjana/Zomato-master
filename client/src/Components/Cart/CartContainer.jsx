@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { IoMdArrowDropdown, IoMdArrowDropright,IoMdArrowDropup,} from "react-icons/io";
+import {
+  IoMdArrowDropdown,
+  IoMdArrowDropright,
+  IoMdArrowDropup,
+} from "react-icons/io";
 import { IoCloseSharp } from "react-icons/io5";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router";
@@ -8,7 +12,7 @@ import { useHistory } from "react-router";
 import FoodItem from "./FoodItem";
 
 // redux action
-//import { getCart } from "../../Redux/Reducer/Cart/Cart.action";
+import { getCart } from "../../Redux/Reducer/Cart/Cart.action";
 
 const CartSM = ({ toggle }) => {
   const reduxState = useSelector((global) => global.cart.cart);
@@ -24,7 +28,7 @@ const CartSM = ({ toggle }) => {
             {reduxState.length} Item <IoMdArrowDropup />
           </small>
           <h4>
-            ₹{reduxState.reduce((acc, curVal) => acc + curVal.totalPrice, 0)}
+            ₹{reduxState.reduce((acc, curVal) => acc + curVal.totalPrice, 0)} {/*acc-> accumulator . resultant value after calc is stored in acc*/ }
             <sub>(plus tax)</sub>
           </h4>
         </div>
@@ -60,7 +64,7 @@ const CartLg = ({ toggle }) => {
         <div className="flex items-center gap-2">
           <h4 className="text-xl">
             Subtotal:₹{" "}
-            {reduxState.reduce((acc, curVal) => acc + curVal.totalPrice, 0)}
+           {reduxState.reduce((acc, curVal) => acc + curVal.totalPrice, 0)}  {/* acc->accumulator */}
           </h4>
           <button
             onClick={continueToCheckout}
