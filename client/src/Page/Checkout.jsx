@@ -7,8 +7,8 @@ import Razorpay from "razorpay";
 import FoodItem from "../Components/Cart/FoodItem";
 import AddressList from "../Components/Checkout/AddressList";
 
-// reduxa action
-//import { createOrder } from "../Redux/Reducer/Order/order.action";
+// redux action
+import { createOrder } from "../Redux/Reducer/Order/order.action";
 
 const Checkout = () => {
   const reduxStateCart = useSelector((global) => global.cart.cart);
@@ -31,7 +31,7 @@ const Checkout = () => {
 
   const payNow = () => {
     let options = {
-      key: "rzp_test_RNvW44vJHiXg1b",
+      key: "rzp_test_fCmJcxwCGTsgt8",
       amount:
         reduxStateCart.reduce((acc, curVal) => acc + curVal.totalPrice, 0) *
         100,
