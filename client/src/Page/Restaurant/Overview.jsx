@@ -17,7 +17,7 @@ import Mapview from "../../Components/restaurant/MapView";
 
 const Overview = () => {
   const [menuImage, setMenuImages] = useState({ images: [] });
-  const [Reviews, setReviewss] = useState([]);
+  const [Reviews, setReviews] = useState([]);
 
   const { id } = useParams();
 
@@ -63,18 +63,19 @@ const Overview = () => {
   );
   const dispatch = useDispatch();
 
-  useEffect(() => { 
+  useEffect(() => {
     if (reduxState) {
-      dispatch(getImage(reduxState?.menuImage)).then((data) => {
+      dispatch(getImage(reduxState?.menuImages)).then((data) => {
         const images = [];
         data.payload.image.images.map(({ location }) => images.push(location));
         setMenuImages(images);
       });
       dispatch(getReviews(reduxState?._id)).then((data) =>
-        setReviewss(data.payload.reviews)
+        setReviews(data.payload.reviews)
       );
     }
   }, []);
+
 
   const ratingChanged = (newRating) => {
     console.log(newRating);

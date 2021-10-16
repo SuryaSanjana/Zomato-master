@@ -17,7 +17,7 @@ const Menu = () => {
 
   useEffect(() => {
     if (reduxState) {
-      dispatch(getImage(reduxState?.menuImage)).then((data) => {
+      dispatch(getImage(reduxState?.menuImages)).then((data) => {
         const images = [];
         data.payload.image.images.map(({ location }) => images.push(location));
         setMenus(images);
